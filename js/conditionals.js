@@ -130,6 +130,32 @@ randomColor = prompt("Give me another color ");
  * return value.
  */
 
+function calculateTool(luckyNumber, totalAmount) {
+    switch(luckyNumber) {
+        case 0:
+            return totalAmount;
+        case 1:
+            return totalAmount - ( totalAmount * .10);
+        case 2:
+            return totalAmount - ( totalAmount * .25);
+        case 3:
+            return totalAmount - ( totalAmount * .35);
+        case 4:
+            return totalAmount - ( totalAmount * .50);
+        case 5:
+            return 0;
+    }
+    return result;
+}
+console.log(calculateTool(1, 100));
+console.log(calculateTool(2, 100));
+console.log(calculateTool(3, 100));
+console.log(calculateTool(4, 100));
+console.log(calculateTool(5, 100));
+
+
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -138,7 +164,12 @@ randomColor = prompt("Give me another color ");
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+ var luckyNumber = Math.floor(Math.random() * 6);
+var totalBill = prompt("What is your total bill: ")
+alert("Your total bill is: " + calculateTool(luckyNumber, totalBill));
+alert("Your lucky number is " + luckyNumber + "\n You're price before the discount is: " + totalBill + "\n " +
+    "Your total bill is: " + calculateTool(luckyNumber, totalBill));
+
 
 /**
  * TODO:
@@ -156,3 +187,25 @@ randomColor = prompt("Give me another color ");
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+var answer = confirm("Would you like to enter a number? ")
+if (answer) {
+    var number = prompt("Enter a number");
+    if (isNaN(number)) {
+        alert("You didn't enter a number")
+    } else {
+        number = parseFloat(number)
+        if(number % 2 == 0) {
+            alert("Your number is even! ");
+        } else {
+            alert("Your number is odd");
+        }
+        alert("100 + your number is : " + Number(number + 100));
+        if(number < 0 ) {
+            alert("Your number is negative");
+        } else {
+            alert("your number is positive ");
+        }
+    }
+
+}
