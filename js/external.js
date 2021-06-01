@@ -47,7 +47,21 @@ const full = confirm("Is he class full? ");
 const conflict = confirm("Is there a conflict ");
 alert("You can enroll in class " + (!full && !conflict));
 
-let premium =confirm("are you a premium member? ")
+let premium =confirm("Are you a premium member? ")
 let quantity = Number(prompt("How many items did you buy "));
 let expired = confirm("Is the coupon expired? ")
+
 alert("You can get the discount " + ((!expired) && (premium || (quantity > 2))));
+
+var username = "codeup"
+var password = "notcodeup "
+var contains_no_white_space = password === password.trim() && username === username.trim();
+
+var password_is_five_characters = password.length >= 5;
+var password_contains_username = !password.includes(username);
+var username_less_than_20_chars = username.length < 20;
+
+console.log(password_is_five_characters);
+console.log(password_contains_username);
+console.log(username_less_than_20_chars);
+console.log(contains_no_white_space);
